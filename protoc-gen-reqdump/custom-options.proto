@@ -1,0 +1,13 @@
+syntax = "proto3";
+package example;
+option go_package = "gist.github.com/e179eee28268e85c5036859987f8a15e";
+
+import "google/protobuf/descriptor.proto";
+
+message MessageListOptions {
+  bool target = 10;
+}
+
+extend google.protobuf.MessageOptions {
+  MessageListOptions message_list = 50000;
+}
