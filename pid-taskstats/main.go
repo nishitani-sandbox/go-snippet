@@ -26,5 +26,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%+v\n", stats)
+	fmt.Printf("%v\n", stats)
 }
