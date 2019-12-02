@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	interval = 10 // seconds
+	interval = 1 // second
 )
 
 func main() {
