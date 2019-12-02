@@ -46,6 +46,7 @@ func main() {
 	prev := &taskstats.Stats{}
 	well.Go(func(ctx context.Context) error {
 		t := time.NewTicker(interval * time.Second)
+		defer t.Stop()
 		for {
 			select {
 			case <-ctx.Done():
@@ -72,7 +73,6 @@ func main() {
 				prev = cur
 			}
 		}
-		t.Stop()
 		return nil
 	})
 
