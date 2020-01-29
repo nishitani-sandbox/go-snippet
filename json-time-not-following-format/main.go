@@ -17,7 +17,7 @@ type MyTime struct {
 }
 
 func (mt *MyTime) UnmarshalJSON(data []byte) error {
-	if string(data) == `"--"` {
+	if string(data) == `"--"` || string(data) == "null" {
 		*mt = MyTime{}
 		return nil
 	}
@@ -49,7 +49,8 @@ func (mt *MyTime) String() string {
 }
 
 type Test struct {
-	Num         int64  `json:"num,omitempty"`
+	Num         int64  `json:"num"`
+	EmptyTime   MyTime `json:"emptyTime,string"`
 	InvalidTime MyTime `json:"invalidTime,string"`
 	ValidTime   MyTime `json:"validTime,string"`
 }
@@ -69,4 +70,5 @@ func main() {
 	fmt.Println(t.InvalidTime.String())
 	fmt.Println(t.ValidTime.IsEmpty())
 	fmt.Println(t.ValidTime.String())
+	fmt.Println(t.EmptyTime.String())
 }
