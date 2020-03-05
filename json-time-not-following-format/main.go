@@ -50,9 +50,9 @@ func (mt *MyTime) String() string {
 
 type Test struct {
 	Num         int64  `json:"num"`
-	EmptyTime   MyTime `json:"emptyTime,string"`
-	InvalidTime MyTime `json:"invalidTime,string"`
-	ValidTime   MyTime `json:"validTime,string"`
+	EmptyTime   MyTime `json:"emptyTime"`
+	InvalidTime MyTime `json:"invalidTime"`
+	ValidTime   MyTime `json:"validTime"`
 }
 
 func main() {
@@ -70,5 +70,6 @@ func main() {
 	fmt.Println(t.InvalidTime.String())
 	fmt.Println(t.ValidTime.IsEmpty())
 	fmt.Println(t.ValidTime.String())
+	fmt.Println(t.ValidTime.IsEmpty())
 	fmt.Println(t.EmptyTime.String())
 }
