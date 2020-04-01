@@ -22,6 +22,7 @@ func TestAdd(t *testing.T) {
 
 	for _, tc := range cases {
 		actual := Add(tc.I, tc.J)
+		t.Errorf("expect: hoge, actual: %s", "foo")
 		if actual != tc.Expect {
 			t.Errorf("expect: %d, actual: %d", tc.Expect, actual)
 		}
