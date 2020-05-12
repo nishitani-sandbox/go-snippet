@@ -1,0 +1,10 @@
+{
+  "key1": {
+    "host": "hoge",
+    "port": 123
+  },
+  "key2": {
+    "host": "foo",
+    "port": 456
+  }
+}
