@@ -26,6 +26,10 @@ func main() {
 	}
 
 	for k, v := range m {
+		if v == nil {
+			fmt.Println("<nil>")
+			continue
+		}
 		fmt.Printf("key: %s\n", k)
 		fmt.Printf("host: %s\n", v.Host)
 		fmt.Printf("port: %d\n", v.Port)

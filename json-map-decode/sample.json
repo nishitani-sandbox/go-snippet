@@ -6,5 +6,6 @@
   "key2": {
     "host": "foo",
     "port": 456
-  }
+  },
+  "key3": null
 }
